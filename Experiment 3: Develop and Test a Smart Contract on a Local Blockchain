@@ -1,0 +1,123 @@
+Step 1: Install Ganache 
+Download and install Ganache. 
+Launch Ganache Desktop. 
+Create a New Workspace. 
+Ganache automatically generates: 
+ 10 Accounts 
+ Private Keys 
+ Contract Address 
+ Gas Information 
+ Local Blockchain 
+RPC URL: 
+http://127.0.0.1:7545 
+Step 2: Install MetaMask 
+Install MetaMask extension. 
+Create Wallet. 
+Add Custom Network. 
+Network Details 
+Network Name: 
+Ganache 
+RPC URL: 
+http://127.0.0.1:7545 
+Chain ID: 
+1337 
+Currency: 
+ETH 
+Import one Ganache account using its Private Key. 
+Step 3: Open Remix IDE 
+Visit: 
+https://remix.ethereum.org 
+Create a new file 
+SimpleStorage.sol 
+Solidity Program 
+// SPDX-License-Identifier: MIT 
+pragma solidity ^0.8.20; 
+contract SimpleStorage { 
+uint public number; 
+function setNumber(uint _number) public { 
+number = _number; 
+} 
+function getNumber() public view returns(uint){ 
+return number; 
+} 
+} 
+Program Explanation 
+State Variable 
+uint public number; 
+Stores an unsigned integer. 
+setNumber() 
+function setNumber(uint _number) 
+Updates the stored value. 
+Example 
+Input = 50 
+Stored Value = 50 
+getNumber() 
+Returns the stored value. 
+50 
+Compilation 
+Choose 
+Compiler Version 
+0.8.20 
+Click 
+Compile SimpleStorage.sol 
+Compilation Successful. 
+Testing 
+Test Case 1 
+Call 
+getNumber() 
+Output 
+0 
+(Default Value) 
+Test Case 2 
+Call 
+setNumber(100) 
+Transaction Successful. 
+Test Case 3 
+Call 
+getNumber() 
+Output 
+100 
+Test Case 4 
+setNumber(250) 
+Output 
+250 
+Test Case 5 
+setNumber(999) 
+Output 
+999 
+
+Expected Output 
+Contract Successfully Deployed 
+Stored Number = 999 
+Transaction Successful 
+Gas Used = xxxx 
+Block Number = xx 
+Ganache Transaction Details 
+Observe: 
+ Block Number 
+ Transaction Hash 
+ Contract Address 
+ Gas Used 
+ Execution Time 
+ Transaction Status 
+Example 
+Transaction Hash 
+0x9f81.... 
+Gas Used 
+43718 
+Status 
+Success 
+Sample Output 
+Deploy Successful 
+Contract Address 
+0x8D43A.... 
+getNumber() 
+0 
+setNumber(100) 
+Transaction Successful 
+getNumber() 
+100 
+setNumber(999) 
+Transaction Successful 
+getNumber() 
+999 
