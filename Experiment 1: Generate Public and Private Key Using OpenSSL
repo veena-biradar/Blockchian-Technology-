@@ -1,0 +1,21 @@
+Step 1: Check OpenSSL Installation [openssl version ]
+Step 2: Generate Private Key  [openssl genrsa -out private_key.pem 2048]
+Step 3: Display Private Key Details [openssl rsa -in private_key.pem -text -noout]
+Step 4: Generate Public Key from Private Key  [openssl rsa -in private_key.pem -pubout -out public_key.pem]
+Step 5: View Public Key [openssl rsa -pubin -in public_key.pem -text -noout]
+Program (Shell Script Version) 
+[#!/bin/bash 
+ echo "Generating RSA Private Key..." 
+ openssl genrsa -out private_key.pem 2048 
+ echo "Generating Public Key..." 
+ openssl rsa -in private_key.pem -pubout -out 
+ public_key.pem 
+ echo "Keys Generated Successfully!" 
+ echo "Private Key File: private_key.pem" 
+ echo "Public Key File: public_key.pem"]
+Save the file as: [generate_keys.sh]
+Give execution permission: [chmod +x generate_keys.sh]
+Run: [./generate_keys.sh]
+Verification 
+Check private key: [cat private_key.pem]
+Check public key: [cat public_key.pem] 
